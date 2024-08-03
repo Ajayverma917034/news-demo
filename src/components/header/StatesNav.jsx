@@ -16,13 +16,13 @@ const StatesNav = ({ params: state }) => {
       </p>
       <div className="flex gap-x-5 overflow-x-auto no-scrollbar">
         {navItems.map((item, index) => (
-          <NavLink
+          <link
             key={index}
-            to={`/state/${state}/${item.english}`}
+            href={`/state/${state}/${item.english}`}
             className="p-3 text-white mt-1 flex items-center justify-center"
           >
             {item.hindi}
-          </NavLink>
+          </link>
         ))}
       </div>
     </div>
