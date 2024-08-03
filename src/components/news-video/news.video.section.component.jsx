@@ -2,12 +2,11 @@ import React from "react";
 import { CiLocationOn } from "react-icons/ci";
 import NewsVideoCard from "./news.video.card.section.component";
 import { FaYoutube } from "react-icons/fa";
-import adsmiddleimg from "../../assets/errorimg1.png";
-import { formatDate } from "../../../../../Task/Personal/projects/janpadnews-next/src/lib/formatDate";
-import Heading2 from "../../../../../Task/Personal/projects/janpadnews-next/src/lib/Heading2";
 import Link from "next/link";
 import { YtCollectionSkeleton } from "@/skeleton/HomeSkeleton";
 import Image from "next/image";
+import Heading2 from "@/lib/Heading2";
+import { formatDate } from "@/lib/formatDate";
 
 const NewsVideo = ({ data, title }) => {
   return (

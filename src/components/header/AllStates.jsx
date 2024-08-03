@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import "./MenuBar.css";
 import { FaSearch, FaTimes } from "react-icons/fa";
 import { useRouter } from "next/navigation";
-import { stateDistricts } from "../../../../../Task/Personal/projects/janpadnews-next/src/assets/data";
+import { stateDistricts } from "@/assets/data";
 
 const AllState = ({ isMenuOpen, setIsMenuOpen }) => {
   const menuRef = useRef(null);
@@ -72,10 +72,7 @@ const AllState = ({ isMenuOpen, setIsMenuOpen }) => {
       ></div>
 
       {/* Menu */}
-      <div
-        ref={menuRef}
-        className={`menu ${isMenuOpen ? "menu-open" : ""}`}
-      >
+      <div ref={menuRef} className={`menu ${isMenuOpen ? "menu-open" : ""}`}>
         <div className="menu-header">
           <h3 className="text-2xl font-semibold">अपना शहर चुनें</h3>
           <FaTimes

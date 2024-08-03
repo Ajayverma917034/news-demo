@@ -1,5 +1,5 @@
+import { findDistrict, findHindi } from "@/assets/data";
 import React from "react";
-import { findDistrict, findHindi } from "../../../../../Task/Personal/projects/janpadnews-next/src/assets/data";
 import { NavLink, useParams } from "react-router-dom";
 
 const { state } = useParams();

@@ -1,10 +1,10 @@
-"use client"
+"use client";
 import React, { useEffect, useState } from "react";
-import httpClient from "../../../../Task/Personal/projects/janpadnews-next/src/api/httpClient";
-import Heading from "../../../../Task/Personal/projects/janpadnews-next/src/lib/Heading";
 import ApnaNavbar from "./apna-section/ApnaNavbar";
 import ApnaNews from "./apna-section/ApnaNews";
 import SideNews from "./side-news/SideNews";
+import Heading from "@/lib/Heading";
+import axios from "axios";
 const districts = [
   "all",
   "sonbhadra",
@@ -26,8 +26,8 @@ const ApnaZila = () => {
 
   const fetchNewsDistrictWise = () => {
     setData(null);
-    httpClient
-      .post(`get-news-query`, {
+    axios
+      .post(`${process.env.NEXT_PUBLIC_SERVER_DOMAIN}/get-news-query`, {
         district:
           currentDistrictIndex === 0
             ? "apna zila"

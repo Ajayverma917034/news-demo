@@ -1,7 +1,7 @@
-"use client"
+"use client";
 import React, { useEffect, useState } from "react";
-import httpClient from "../../../../Task/Personal/projects/janpadnews-next/src/api/httpClient";
-import Heading from "../../../../Task/Personal/projects/janpadnews-next/src/lib/Heading";
+import Heading from "@/lib/Heading";
+import axios from "axios";
 import ApnaNavbar from "./apna-section/ApnaNavbar";
 import ApnaNews from "./apna-section/ApnaNews";
 import SideNews from "./side-news/SideNews";
@@ -20,8 +20,8 @@ const RajyaMain = () => {
 
   const fetchNewsDistrictWise = () => {
     setData(null);
-    httpClient
-      .post(`get-news-query`, {
+    axios
+      .post(`${process.env.NEXT_PUBLIC_SERVER_DOMAIN}/get-news-query`, {
         state: currentStateIndex === 0 ? "rajya" : states[currentStateIndex],
       })
       .then(({ data }) => {
@@ -37,7 +37,7 @@ const RajyaMain = () => {
     fetchNewsDistrictWise();
   }, [currentStateIndex]);
   return (
-    <div className="flex spacing mt-2 sm:mt-8 ">
+    <div className="flex spacing max-sm:px-0 mt-2 sm:mt-8 ">
       <div className="grid grid-cols-1 lg:grid-cols-6 mx-auto w-full gap-x-5">
         <div className="flex flex-col flex-wrap md:col-span-4 overflow-hidden w-full">
           <Heading title={"राज्य"} />

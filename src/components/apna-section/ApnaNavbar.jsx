@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import ApnaPagi from "./ApnaPagi";
-import { findHindi } from "../../../../../Task/Personal/projects/janpadnews-next/src/assets/data";
+import { findHindi } from "@/assets/data";
 const ApnaNavbar = ({ navItems, currentIndex, setCurrentIndex, hint }) => {
   const [hovered, setHovered] = useState(false);
   const [visibleNavItems, setVisibileNavItems] = useState(6);

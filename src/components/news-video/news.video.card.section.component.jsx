@@ -2,7 +2,6 @@ import React from "react";
 import cardVideoimg from "./imgv.png";
 import { FaYoutube } from "react-icons/fa";
 import { CiLocationOn } from "react-icons/ci";
-import { formatDate } from "../../../../../Task/Personal/projects/janpadnews-next/src/lib/formatDate";
 import Link from "next/link";
 import Image from "next/image";
 

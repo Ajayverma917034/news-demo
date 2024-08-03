@@ -155,6 +155,7 @@ const engToHindi = {
     "bollywood": "बॉलीवुड",
     // "rajya": ""
     "videos": "वीडियो",
+    'read also': 'ये भी पढ़ें',
 };
 
 

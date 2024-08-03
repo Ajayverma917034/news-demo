@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import { CiSearch } from "react-icons/ci";
 import { IoMdClose } from "react-icons/io";
-import httpClient from "../../../../../Task/Personal/projects/janpadnews-next/src/api/httpClient";
-import { handleImageError } from "../../../../../Task/Personal/projects/janpadnews-next/src/lib/errorImg";
 import toast from "react-hot-toast";
 import Link from "next/link";
+import axios from "axios";
+import Image from "next/image";
 
 const Search = ({ searchOpen, setSearchOpen }) => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -26,8 +26,10 @@ const Search = ({ searchOpen, setSearchOpen }) => {
         return toast.error("Please write something to search");
       }
       inputRef.current.blur();
-      httpClient
-        .post("search-news", { search: searchTerm })
+      axios
+        .post(`${process.env.NEXT_PUBLIC_SERVER_DOMAIN}/search-news`, {
+          search: searchTerm,
+        })
         .then(({ data }) => {
           setNews(data.news);
         })
@@ -90,16 +92,22 @@ const Search = ({ searchOpen, setSearchOpen }) => {
               news.length ? (
                 news.map((item, index) => (
                   <Link
-                    to={`/news/${item?.news_id}`}
+                    href={`/news/${item?.news_id}`}
                     className="flex w-full flex-row gap-4 p-2 bg-white rounded border-b border-gray cursor-pointer"
                     key={index}
                   >
                     <div className="h-[60px] min-w-[120px]">
-                      <img
+                      <Image
                         src={item?.banner}
                         alt="Image"
+                        width={70}
+                        height={400}
+                        sizes={{
+                          maxWidth: "100%",
+                          height: "auto",
+                        }}
                         className="object-cover"
-                        onError={handleImageError}
+                        // onError={handleImageError}
                       />
                     </div>
                     <div className="flex flex-col lg:w-3/4">

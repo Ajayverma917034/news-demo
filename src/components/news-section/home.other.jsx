@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import NewsSection from "./news.section.component";
 // import CustomeAndGoogleAdd from "../pages/advertisement/CustomeAndGoogleAdd";
@@ -23,7 +23,7 @@ const HomeRightBarOther = ({ data }) => {
                   );
                 })}
             </div>
-            <div className="flex flex-col md:gap-y-10 gap-y-2  md:col-span-2 bg-red">
+            <div className="flex flex-col md:gap-y-10 gap-y-2  md:col-span-2 ">
               {/* <CustomeAndGoogleAdd index={2} /> */}
               <SideNews title="education" />
             </div>

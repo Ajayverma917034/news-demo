@@ -1,6 +1,8 @@
+import ApnaZila from "@/components/ApnaZila";
 import HomeRightBar from "@/components/home/HomeRightBar";
 import HomeRightBarOther from "@/components/news-section/home.other";
 import NewsSection from "@/components/news-section/news.section.component";
+import RajyaMain from "@/components/RajyaMain";
 import Link from "next/link";
 
 const fetchHomeNews = async () => {
@@ -62,6 +64,8 @@ const Home = async () => {
   return (
     <div>
       <HomeRightBar data={homeNews.data.slice(0, 2)} ytData={ytNews.news} />
+      <RajyaMain />
+      <ApnaZila />
       <HomeRightBarOther data={homeNews.data.slice(2, 4)} />
       {homeNews.data.length > 4 && (
         <div className="flex spacing mt-2">

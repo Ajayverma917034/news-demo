@@ -1,5 +1,4 @@
 import React from "react";
-import Heading from "../../../../../Task/Personal/projects/janpadnews-next/src/lib/Heading";
 import { CiLocationOn } from "react-icons/ci";
 // import HorizontalAdsGoogle from "../../../pages/advertisement/HorizontalAdsGoogle";
 import Link from "next/link";
@@ -7,6 +6,7 @@ import { CollectionNewsSkeleton } from "@/skeleton/HomeSkeleton";
 import { formatDate } from "@/lib/formatDate";
 import Image from "next/image";
 import { handleImageError } from "@/lib/errorImg";
+import Heading from "@/lib/Heading";
 
 const NewsSection = ({ data, title }) => {
   return (
