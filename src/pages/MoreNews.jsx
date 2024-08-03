@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
 import { useEffect, useState } from "react";
 import { HiOutlineExclamationCircle } from "react-icons/hi2";
-import { useRouter } from 'next/router';
-import Link from 'next/link';
-import axios from 'axios';
+import { useRouter } from "next/router";
+import Link from "next/link";
+import axios from "axios";
 import useInfiniteScroll from "@/lib/useInfiniteScroll";
 import { findHindi } from "@/assets/data";
 import Heading from "@/lib/Heading";
@@ -13,8 +13,7 @@ import MorePageCard from "@/components/news-section/morepage.news.card";
 import { CollectionNewsSkeleton } from "@/skeleton/HomeSkeleton";
 import SideNews from "@/components/side-news/SideNews";
 
-const MoreNews = ({title}) => {
-
+const MoreNews = ({ title }) => {
   const [data, setData] = useState(null);
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
@@ -23,11 +22,14 @@ const MoreNews = ({title}) => {
   const fetchNews = async (page) => {
     try {
       setIsLoading(true);
-      const response = await axios.post(`${process.env.NEXT_PUBLIC_SERVER_DOMAIN}/get-news-query`, {
-        limit: 2,
-        news_section_type: [title],
-        page,
-      });
+      const response = await axios.post(
+        `${process.env.NEXT_PUBLIC_SERVER_DOMAIN}/get-news-query`,
+        {
+          limit: 2,
+          news_section_type: [title],
+          page,
+        }
+      );
       const newData = response.data;
 
       // Avoid appending if data is already loaded
@@ -72,14 +74,12 @@ const MoreNews = ({title}) => {
 
   const [lastElementRef] = useInfiniteScroll(loadMore, hasMore && !isLoading);
 
-
   return (
     <div className="flex spacing mt-2 sm:mt-8">
       <div className="grid grid-cols-1 lg:grid-cols-6 mx-auto w-full gap-5">
         <div className="flex flex-col flex-wrap md:col-span-4 overflow-hidden w-full">
-          {
-            data ? (
-              data.length ?  (
+          {data ? (
+            data.length ? (
               <div className="flex w-full flex-col flex-wrap sm:gap-4">
                 <Heading title={findHindi(title)} />
                 {data.length > 0 && (
@@ -132,11 +132,10 @@ const MoreNews = ({title}) => {
                   {isLoading && <div>Loading more...</div>}
                 </div>
               </div>
-              )
-              : <p>No news available</p>
+            ) : (
+              <p>No news available</p>
             )
-            : 
-        (
+          ) : (
             <>
               <CollectionNewsSkeleton />
               <CollectionNewsSkeleton />

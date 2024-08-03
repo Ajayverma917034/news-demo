@@ -1,16 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { handleImageError } from "../../../common/errorImg";
+import Image from "next/image";
 
 function SubNewsCard({ data }) {
   return (
-    <Link to={`/news/${data?.news_id}`} className="flex w-full flex-row gap-4">
+    <Link
+      href={`/news/${data?.news_id}`}
+      className="flex w-full flex-row gap-4"
+    >
       <div className="h-[80px] min-w-[120px]">
-        <img
+        <Image
           src={data?.banner}
           alt="Image"
+          width={1200}
+          height={400}
+          sizes={{
+            maxWidth: "100%",
+            height: "auto",
+          }}
           className="object-cover"
-          onError={handleImageError}
+          // onError={handleImageError}
         />
       </div>
       <div className="flex flex-col lg:w-3/4">

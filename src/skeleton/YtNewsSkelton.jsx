@@ -18,7 +18,10 @@ const YtNewsSkelton = () => {
         {
           <div className="flex gap-5 flex-col md:flex-row justify-between mb-4">
             {[1, 2, 3].map((item, index) => (
-              <div className="w-full flex flex-col max-md:flex-row max-md:gap-5 max-md:grid max-md:grid-cols-5 rounded-lg">
+              <div
+                className="w-full flex flex-col max-md:flex-row max-md:gap-5 max-md:grid max-md:grid-cols-5 rounded-lg"
+                key={index}
+              >
                 <div className="max-w-[17rem] h-24 md:h-36 col-span-2 relative rounded-lg bg-[#dddbdd] animate-pulse">
                   <img src={thumbnail} alt="hello" className="rounded-lg" />
                 </div>

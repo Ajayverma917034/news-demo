@@ -1,11 +1,8 @@
 import { findDistrict, findHindi } from "@/assets/data";
 import React from "react";
-import { NavLink, useParams } from "react-router-dom";
 
-const { state } = useParams();
-const navItems = findDistrict(state);
-
-const StatesNav = () => {
+const StatesNav = ({ params: state }) => {
+  const navItems = findDistrict(state);
   return (
     <div className="bg-[#262626] flex">
       <p

@@ -63,7 +63,7 @@ const Navbar = () => {
             src={logoimg}
             alt="logo"
             className="w-[50%] sm:w-[35%] md:w-[30%] lg:w-[20%]"
-            priority
+            priority={true}
           />
           <div className="flex justify-between items-center gap-x-3 sm:gap-8 max-sm:mt-[8px]">
             <div

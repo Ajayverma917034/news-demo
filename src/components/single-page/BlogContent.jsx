@@ -1,7 +1,18 @@
+import Image from "next/image";
+
 const Img = ({ url, caption }) => {
   return (
     <div>
-      <img src={url} alt="Img" />{" "}
+      <Image
+        src={url}
+        alt="Img"
+        width={1200}
+        height={400}
+        sizes={{
+          maxWidth: "100%",
+          height: "auto",
+        }}
+      />{" "}
       {caption.length ? (
         <p className="w-full text-center my-1 md:mb-12 text-base text-dark-grey font-anekdevanagari">
           {caption}

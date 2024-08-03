@@ -23,7 +23,7 @@ const NewsSection = ({ data, title }) => {
                 >
                   <div className="md:w-[50%] w-full h-[200px] sm:h-[250px] p-1">
                     <Image
-                      src={data[0]?.banner}
+                      src={data[0].banner}
                       width={1200}
                       height={400}
                       sizes={{

@@ -2,8 +2,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
 import Heading from "@/lib/Heading";
 import PageContent from "@/components/single-page/PageContent";
 
