@@ -34,6 +34,7 @@ const ApnaNews = ({ data, navItems, currentIndex, hint }) => {
                 maxWidth: "100%",
                 height: "auto",
               }}
+              alt="News Image"
               // onError={handleImageErro}
             />
           </div>

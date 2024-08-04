@@ -26,7 +26,7 @@ const AdvertisementAdsCall = () => {
 
   useEffect(() => {
     fetchAds();
-  }, []);
+  }, [fetchAds]);
   return <div>AdvertisementAdsCall</div>;
 };
 

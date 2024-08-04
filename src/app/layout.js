@@ -14,10 +14,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={aneka.className}>
-        <Navbar/>
+        <Navbar />
         {children}
-        <Footer/>
-        </body>
+      </body>
     </html>
   );
 }

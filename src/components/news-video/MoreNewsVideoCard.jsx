@@ -4,6 +4,7 @@ import { CiLocationOn } from "react-icons/ci";
 import { FaYoutube } from "react-icons/fa";
 import { formatDate } from "@/lib/formatDate";
 import Link from "next/link";
+import Image from "next/image";
 
 const MoreNewsVideoCard = ({ data }) => {
   return (
@@ -13,9 +14,15 @@ const MoreNewsVideoCard = ({ data }) => {
         className="grid grid-cols-6 md:grid-cols-7 gap-2 md:gap-2 lg:h-[150px] shadow-card p-1 rounded-md w-full"
       >
         <div className="col-span-2 md:col-span-2 h-[95px] sm:h-[140px] w-full rounded-md relative">
-          <img
+          <Image
             src={`https://img.youtube.com/vi/${data?.videoLinkId}/mqdefault.jpg`}
             alt="Image"
+            width={1200}
+            height={400}
+            sizes={{
+              maxWidth: "100%",
+              height: "auto",
+            }}
             className="object-cover w-full h-full rounded-md"
             // onError={handleImageError}
           />

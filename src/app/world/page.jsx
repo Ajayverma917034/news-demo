@@ -1,10 +1,8 @@
-import MoreNews from '@/pages/MoreNews'
-import React from 'react'
+import MoreNews from "@/pages/MoreNews";
+import React from "react";
 
 const page = () => {
-  return (
-    <MoreNews title={'world'}/>
-  )
-}
+  return <MoreNews title={"world"} />;
+};
 
-export default page
+export default page;

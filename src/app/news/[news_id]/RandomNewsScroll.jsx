@@ -50,7 +50,7 @@ const RandomNewsScroll = ({ initialNewsId }) => {
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [hasMore]);
+  }, [hasMore, fetchRandomNews]);
 
   return (
     <div className="w-full">

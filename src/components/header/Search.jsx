@@ -51,7 +51,7 @@ const Search = ({ searchOpen, setSearchOpen }) => {
       document.removeEventListener("mousedown", handleClickOutside);
       document.body.style.overflow = "auto";
     };
-  }, [searchOpen]);
+  }, [searchOpen, handleClickOutside]);
 
   if (!searchOpen) return null;
 
