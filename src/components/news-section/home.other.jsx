@@ -7,12 +7,12 @@ import SideNews from "../side-news/SubNewsCard";
 const HomeRightBarOther = ({ data }) => {
   return (
     <>
-      {data.length > 0 && (
+      {data && data.data && data.data.length > 0 && (
         <div className="flex spacing mt-2 sm:mt-8 ">
           <div className="grid grid-cols-1 lg:grid-cols-6 w-full mx-auto gap-5">
             {/* <StatesNav /> */}
             <div className="flex flex-col flex-wrap  md:col-span-4 overflow-hidden">
-              {data &&
+              {data.data.data &&
                 data.map((news, index) => {
                   return (
                     <NewsSection

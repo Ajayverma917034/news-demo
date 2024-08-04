@@ -2,7 +2,9 @@ import ApnaZila from "@/components/ApnaZila";
 import HomeRightBar from "@/components/home/HomeRightBar";
 import HomeRightBarOther from "@/components/news-section/home.other";
 import NewsSection from "@/components/news-section/news.section.component";
+import NewsVideo from "@/components/news-video/news.video.section.component";
 import RajyaMain from "@/components/RajyaMain";
+import SideNews from "@/components/side-news/SideNews";
 
 const fetchHomeNews = async () => {
   try {
@@ -62,10 +64,34 @@ const Home = async () => {
 
   return (
     <div>
-      <HomeRightBar data={homeNews.data.slice(0, 2)} ytData={ytNews.news} />
+      {/* <HomeRightBar data={homeNews.data.slice(0, 2)} ytData={ytNews.news} /> */}
+      <div className="flex spacing mt-2 ">
+        <div className="grid grid-cols-1 lg:grid-cols-6 mx-auto w-full gap-5 ">
+          <div className="flex flex-col flex-wrap  md:col-span-4 overflow-hidden">
+            {
+              homeNews && homeNews.data &&
+              <NewsSection data={homeNews?.data[0]?.data} title={homeNews?.data[0]?.title} />
+            }
+            {ytNews && ytNews.news ? (
+              <NewsVideo data={ytNews.news} title="टॉप वीडियो" />
+            ) : (
+              <YtCollectionSkeleton />
+            )}
+          </div>
+          <div className="flex flex-col md:gap-y-10 gap-y-2  md:col-span-2">
+            {/* <CustomeAndGoogleAdd index={0} /> */}
+            <SideNews title={"read also"} />
+          </div>
+        </div>
+      </div>
+
+
       <RajyaMain />
       <ApnaZila />
-      <HomeRightBarOther data={homeNews.data.slice(2, 4)} />
+
+      <HomeRightBarOther data={homeNews} />
+
+
       {homeNews.data.length > 4 && (
         <div className="flex spacing mt-2">
           <div className="grid grid-cols-1 lg:grid-cols-6 mx-auto w-full">
