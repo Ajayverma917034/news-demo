@@ -5,6 +5,7 @@ import NewsSection from "@/components/news-section/news.section.component";
 import NewsVideo from "@/components/news-video/news.video.section.component";
 import RajyaMain from "@/components/RajyaMain";
 import SideNews from "@/components/side-news/SideNews";
+import { YtCollectionSkeleton } from "@/skeleton/HomeSkeleton";
 
 const fetchHomeNews = async () => {
   try {
